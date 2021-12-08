@@ -1,16 +1,16 @@
 <?php
-
 session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "scandinavia";
 
-$conn = mysqli_connect(
-    'localhost',
-    'root',
-    '',
-    'scandinavia'
-);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
-// if(isset($conn)){
-//     echo " Scandinavian database connected";
-// }
-
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+// echo "Connected successfully";
 ?>
