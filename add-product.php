@@ -18,8 +18,7 @@
         <div class="alignButton" style="display:flex; justify-content:space-between">
             <a style="margin-left:30px;text-decoration:none;color:black;font-size:30px;" href="index.php">Product List</a>           
         </div>
-        <button  style="margin-right:50px;" type="button"  class="btn btn-primary" name="add-product"
-                id="add-product-btn" onclick="window.location.href='add-product.php'"><b>ADD</b></button>  
+ 
         <hr/>
     </div>
         <script>
