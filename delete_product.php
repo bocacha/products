@@ -1,5 +1,6 @@
 <?php
-session_start();
+//Removed Session due to mandatory instructions, denying alerts/messages to be displayed
+//session_start();
 include("db.php");
 
 if(isset($_POST['mass_delete'])) {
@@ -8,11 +9,11 @@ if(isset($_POST['mass_delete'])) {
   $query = "DELETE FROM products WHERE id IN ($extract_id)";
   $result = mysqli_query($conn, $query);
   if($result){
-    $_SESSION['status'] = "Products Deleted Successfully";
-    header("Location: list_products.php");
+    //$_SESSION['status'] = "Products Deleted Successfully";
+    header("Location: index.php");
   }else{
-    $_SESSION['status'] = "Products Deletion Failed";
-    header("Location: list_products.php");
+    //$_SESSION['status'] = "Products Deletion Failed";
+    header("Location: index.php");
   }
 
 

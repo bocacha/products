@@ -13,23 +13,17 @@
 </head>
 <body>
     
-
-
     <div class="header"style="margin-top:50px;">  
-     
+    
     <form action="delete_product.php" method="post"> 
         
         <div class="alignButton" style="display:flex; justify-content:space-between">
             <a style="margin-left:30px;text-decoration:none;color:black;font-size:30px;" href="index.php">Product List</a>
            
-            <div  class="alignButtons"style="display:flex; justify-content:flex-end"> 
-
-                <!--Tried to pass #1 test, related to clickable element "ADD", I have changing name, id,label, value...no1 works. 
-                 On the following test where products are submited, Tester bot found "ADD" button with no problems at all.
-                Its Tester bot broken maybe?-->
-                <button  style="margin-right:50px;" type="button"  class="btn btn-primary" name="add-product"
-                id="add-product-btn" onclick="window.location.href='add-product.php'"><b>ADD</b></button>  
-               
+            <div  class="alignButtons"style="display:flex; justify-content:flex-end">
+                <button  style="margin-right:50px;" id="add" class="btn btn-primary" 
+                type="button"  name="add" onclick="window.location.href='add-product.php'"> ADD </button>  
+                
                 <button   style="margin-right:50px;" id="delete-product-btn" type="submit" 
                 name="mass_delete" class="btn btn-danger">MASS DELETE</button>   
             
@@ -48,8 +42,13 @@
                 $result_products = mysqli_query($conn, $query);
                 while($row = mysqli_fetch_array($result_products)) { ?> 
                 
-              
-                <div class="col-sm-3">
+                <!-- <?php 
+                    if(isset($_SESSION['status'])){
+                        echo "<h4>".$_SESSION['status']."</h4>";
+                        unset($_SESSION['status']);
+                    }
+                ?>   -->
+                <div class="col-sm-4">
               
                     <div class="card" style="margin:10px;padding:10px;width:250px;">
                         <input class="delete-checkbox" type="checkbox" name="check_list[]" value="<?php echo $row['id']; ?>">
@@ -57,7 +56,7 @@
                         <label><?php echo $row['sku']; ?> : <?php echo $row['prod_type']; ?></label>
                         <h5><?php echo $row['name']; ?></h5>
                         <p>$<?php echo $row['price']; ?></p>
-                        <!--Conditional rendering depending on product type -->
+                        <!--Conditional rendering depending on product type-->
                         <?php if ($row['prod_type'] == 'DVD'): ?>
                         <p>Size: <?php echo $row['dvd']; ?>MB</p>
 

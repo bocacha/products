@@ -19,9 +19,9 @@ if(isset($_POST['save_product'])){
         die("Query Failed.");
     }
 
-    $_SESSION['message'] = 'Product Saved Successfully';
-    $_SESSION['message_type'] = 'success';
-    header("Location:list_products.php");
+    // $_SESSION['message'] = 'Product Saved Successfully';
+    // $_SESSION['message_type'] = 'success';
+    header("Location:index.php");
 }
 
 

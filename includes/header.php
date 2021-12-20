@@ -10,21 +10,12 @@
 </head>
 <body>
 
-<!-- <nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="list_products.php">Product List</a>
-        <a class="navbar-brand" href="index.php">Add</a>
-    </div>
-</nav>
-     -->
-
     <div class="header"style="margin-top:50px;">
         
         <div class="alignButton" style="display:flex; justify-content:space-between">
             <a style="margin-left:30px;text-decoration:none;color:black;font-size:30px;" href="list_products.php">Product List</a>
             <div class="alignButtons" style="display:flex; justify-content:flex-end">
                 <button type="button" class="btn btn-primary" onclick="window.location.href='index.php'">Add</button>
-                <!-- <button  id="delete-product-btn" type="submit" name="mass_delete" class="btn btn-danger" style="margin-left:30px;margin-right:30px;">MASS DELETE</button> -->
             </div>
            
         </div>
